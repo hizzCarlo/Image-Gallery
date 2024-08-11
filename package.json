@@ -18,6 +18,13 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "@filerobot/image-editor": "^3.57.4",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@pqina/pintura": "^8.82.13",
+    "cloudinary-core": "^2.13.1",
+    "fabric": "^6.0.2",
+    "ngx-image-cropper": "^8.0.0",
+    "pintura": "^0.3.10",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

@@ -1,0 +1,81 @@
+/* Ensure the wrapper takes full height and centers its content */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh;
+    margin-top: 4rem;
+}
+
+.login-container {
+    background-color: #3aafa9;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    height: 400px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Fix overflow of input fields */
+.input-group input {
+    width: calc(100% - 40px); /* Adjust width to account for padding and icon */
+    padding: 10px;
+    padding-left: 40px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.input-group .icon {
+    position: absolute;
+    left: 27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.user-icon svg, .lock-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.register-link {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.register-link a {
+    color: #17252A;
+    text-decoration: none;
+}
+
+button {
+    background-color: white;
+    color: #17525A;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #17525A;
+    color: white;
+}

@@ -1,0 +1,16 @@
+   <IfModule mod_rewrite.c>
+       RewriteEngine On
+       RewriteCond %{REQUEST_FILENAME} !-d
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteRule ^(.*)$ routes.php?request=$1 [L,QSA]
+   </IfModule>
+
+   Header set Access-Control-Allow-Origin "*"
+   Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+   Header set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE"
+
+   RewriteCond %{THE_REQUEST} \s/routes\.php\?request=([^\s&]+) [NC]
+   RewriteRule ^ /%1? [R=302,L]
+
+   RewriteCond %{REQUEST_URI} !^/routes\.php
+   RewriteRule ^(.*)$ routes.php?request=$1 [L,QSA]

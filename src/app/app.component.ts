@@ -1,10 +1,29 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'IMAGE-GALLERY';
+  title = 'formalytics';
+  hideHeader: boolean = false;
+  hideFooter: boolean = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.hideHeader = this.shouldHideHeader(event.urlAfterRedirects);
+
+      }
+    });
+  }
+
+  shouldHideHeader(url: string): boolean {
+    const hideHeaderRoutes = ['/gallery'];
+    return hideHeaderRoutes.some(route => url.startsWith(route));
+  }
+
+  
 }
